@@ -28,6 +28,15 @@ public class AlertService {
         }
     }
 
+    public Long totalAlert() {
+        return this.alertRepo.count();
+    }
+
+    public int uncheckedAlert() {
+        int unchecked = this.alertRepo.findByIsChecked(false).size();
+        return unchecked;
+    }
+
     public Optional<Alert> alertById(Long id) {
         return this.alertRepo.findById(id);
     }

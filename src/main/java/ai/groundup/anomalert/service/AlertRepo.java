@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface AlertRepo extends JpaRepository<Alert, Long> {
     public List<Alert> findByMachine(String machine);
+
+    public List<Alert> findByIsChecked(Boolean isChecked);
 }

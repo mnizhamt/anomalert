@@ -52,4 +52,22 @@ public class AlertController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/sum")
+    public ResponseEntity<Long> sumOfAlert() {
+        try {
+            return new ResponseEntity<>(alertService.totalAlert(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(0L, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/unchecked")
+    public ResponseEntity<Integer> sumOfUnchecked() {
+        try {
+            return new ResponseEntity<>(alertService.uncheckedAlert(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(0, HttpStatus.BAD_REQUEST);
+        }
+    }
 }

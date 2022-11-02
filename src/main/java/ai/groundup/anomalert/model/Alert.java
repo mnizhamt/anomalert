@@ -24,6 +24,8 @@ public class Alert {
 
     private String soundClip;
 
+    private Boolean isChecked = false;
+
     public Alert() {}
 
     public Alert(LocalDateTime alertDate, String machine, String anomaly, Long sensor, String soundClip) {
@@ -80,5 +82,13 @@ public class Alert {
 
     public void setSoundClip(String soundClip) {
         this.soundClip = soundClip;
+    }
+
+    public Boolean getChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(Boolean checked) {
+        isChecked = checked;
     }
 }
